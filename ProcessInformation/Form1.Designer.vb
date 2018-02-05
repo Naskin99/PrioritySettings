@@ -277,7 +277,7 @@ Partial Class Form1
         Me.MinimumSize = New System.Drawing.Size(800, 250)
         Me.Name = "Form1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Form1"
+        Me.Text = "Application Boost"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

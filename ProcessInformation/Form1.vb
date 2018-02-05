@@ -11,6 +11,7 @@ Public Class Form1
         For Each sysInfo1 In sysSearch.Get()
             memval = (sysInfo1("totalphysicalmemory").ToString)
         Next
+
         For Each process As Process In Process.GetProcesses()
             Try
                 If (process.MainWindowTitle.Length > 0) Then
