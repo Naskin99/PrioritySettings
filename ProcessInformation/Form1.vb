@@ -93,44 +93,51 @@ Public Class Form1
     End Function
 
     Private Sub priorityStatusTrue_Click(sender As Object, e As EventArgs) Handles priorityStatusTrue.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityBoostEnabled = True
+        Next
         refreshInfo()
     End Sub
 
     Private Sub priorityStatusFalse_Click(sender As Object, e As EventArgs) Handles priorityStatusFalse.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityBoostEnabled = False
+        Next
         refreshInfo()
     End Sub
 
     Private Sub lowPriority_Click(sender As Object, e As EventArgs) Handles lowPriority.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityClass = ProcessPriorityClass.Idle
+        Next
         refreshInfo()
     End Sub
 
     Private Sub belNormPriority_Click(sender As Object, e As EventArgs) Handles belNormPriority.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityClass = ProcessPriorityClass.BelowNormal
+        Next
         refreshInfo()
     End Sub
 
     Private Sub normPriority_Click(sender As Object, e As EventArgs) Handles normPriority.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityClass = ProcessPriorityClass.Normal
+        Next
         refreshInfo()
     End Sub
 
     Private Sub aboveNormPriority_Click(sender As Object, e As EventArgs) Handles aboveNormPriority.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityClass = ProcessPriorityClass.AboveNormal
+        Next
         refreshInfo()
     End Sub
 
     Private Sub highPriority_Click(sender As Object, e As EventArgs) Handles highPriority.Click
-
-        refreshList()
+        For Each process As Process In Process.GetProcessesByName(ListBox1.Items.Item(ListBox1.SelectedIndex))
+            process.PriorityClass = ProcessPriorityClass.High
+        Next
         refreshInfo()
     End Sub
 End Class
